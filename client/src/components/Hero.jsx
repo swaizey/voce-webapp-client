@@ -1,12 +1,34 @@
 
 
 
+import { useEffect, useState } from "react";
 import { FaAndroid, FaApple } from "react-icons/fa6";
 import phone from "../assets/phone.png";
+import heroBg from "../assets/herobg.png";
 import "../index.css";
 export default function Hero() {
+  const [phoneOffset, setPhoneOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = Math.min(window.scrollY * 0.12, 60);
+      setPhoneOffset(offset);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
 
       <div className="hero-overlay">
 
@@ -66,6 +88,7 @@ export default function Hero() {
           <img
             src={phone}
             alt="Voce App"
+            style={{ transform: `translateY(${phoneOffset}px)` }}
           />
 
         </div>

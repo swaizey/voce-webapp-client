@@ -397,23 +397,42 @@ h1,h2,h3{
 
 /* @@@@@@@ HERO @@@@@@@ */
 .hero{
-
+    width:100%;
     min-height:100vh;
-
-    background:
-    linear-gradient(rgba(10,4,25,.85),
-    rgba(10,4,25,.92)),
-    url("../../assets/hero-bg.jpg");
-
-    background-size:cover;
-    background-position:center;
+    position:relative;
 
     display:flex;
     align-items:center;
 
-    color:white;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
 
-    overflow:hidden;
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.hero-overlay{
+    position:relative;
+    z-index:1;
+
+    width:90%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
 }
 
 .hero-overlay{
@@ -539,7 +558,8 @@ h1,h2,h3{
 .platform-badge{
     display:inline-flex;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-start;
+    gap:8px;
     padding:0;
     background:transparent;
     border:none;
@@ -552,6 +572,7 @@ h1,h2,h3{
     justify-content:center;
     width:auto;
     height:auto;
+    line-height:1;
     border-radius:0;
     background:transparent;
     font-size:1.6rem;
@@ -582,6 +603,7 @@ h1,h2,h3{
     max-width:100%;
 
     filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
+    transition:transform .2s ease-out;
 }
 
 /* Responsive */
