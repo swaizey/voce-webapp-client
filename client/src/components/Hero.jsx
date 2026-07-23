@@ -1,6 +1,7 @@
 
-import Logo from "./Logo";
 
+
+import { FaAndroid, FaApple } from "react-icons/fa6";
 import phone from "../assets/phone.png";
 import "../index.css";
 export default function Hero() {
@@ -11,7 +12,7 @@ export default function Hero() {
 
         <div className="hero-left">
 
-          <Logo />
+          <h1>VOCE</h1>
 
           <h2>
             The home of
@@ -44,12 +45,14 @@ export default function Hero() {
 
             <div className="platform-icons">
 
-              <div>
-                🤖 Android
+              <div className="platform-badge">
+                <span className="platform-icon"><FaAndroid /></span>
+                <span className="platform-label">Android</span>
               </div>
 
-              <div>
-                 iOS
+              <div className="platform-badge">
+                <span className="platform-icon"><FaApple /></span>
+                <span className="platform-label">iOS</span>
               </div>
 
             </div>

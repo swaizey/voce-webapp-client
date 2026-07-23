@@ -11,7 +11,6 @@ export default function Logo() {
         CE
       </h1>
 
-      <p>THE HOME OF CATHOLIC MUSIC</p>
     </div>
   );
 }
