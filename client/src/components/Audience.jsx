@@ -29,7 +29,7 @@ const audience = [
   },
   {
     icon: <FaPray />,
-    title: "Seminarians",
+    title: "Students of Sacred Music",
   },
   {
     icon: <FaCross />,
@@ -37,11 +37,11 @@ const audience = [
   },
   {
     icon: <FaSchool />,
-    title: "Catholic Schools",
+    title: "Sacred Schools",
   },
   {
     icon: <FaUserFriends />,
-    title: "Catholic Families",
+    title: "Praying Families",
   },
 ];
 

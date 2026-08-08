@@ -6,6 +6,7 @@ import { FaAndroid, FaApple } from "react-icons/fa6";
 import phone from "../assets/phone.png";
 import heroBg from "../assets/herobg.png";
 import "../index.css";
+
 export default function Hero() {
   const [phoneOffset, setPhoneOffset] = useState(0);
 
@@ -39,26 +40,24 @@ export default function Hero() {
           <h2>
             The home of
             <br />
-            Catholic music.
+            Sacred Music.
           </h2>
 
           <p>
-            Discover, stream, and share Catholic hymns,
-            choral works, liturgical music, and original
-            compositions from choirs and composers
+            Discover, stream, and share Sacred Hymns,
+            Choral Works, Liturgical Music, and Original
+            Compositions from Choirs and Composers
             across Nigeria and beyond.
           </p>
 
           <div className="hero-buttons">
-
-            <button className="primary-btn">
+            <a href="#waitlist" className="primary-btn">
               Join Waitlist
-            </button>
+            </a>
 
-            <button className="secondary-btn">
+            <a href="#contributors" className="secondary-btn">
               Become a Contributor
-            </button>
-
+            </a>
           </div>
 
           <div className="platforms">
