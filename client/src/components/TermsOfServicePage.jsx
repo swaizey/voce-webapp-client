@@ -1,10 +1,11 @@
 import LegalPage from "./LegalPage";
 
-export default function TermsOfServicePage() {
+export default function TermsOfServicePage({ onNavigate }) {
   return (
     <LegalPage
       title="Terms of Service"
       subtitle="These Terms govern your use of the Vocé platform and the services we provide."
+      onNavigate={onNavigate}
     >
       <h2>1. Introduction</h2>
       <p>

@@ -7,7 +7,7 @@ import phone from "../assets/phone.png";
 import heroBg from "../assets/herobg.png";
 import "../index.css";
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
   const [phoneOffset, setPhoneOffset] = useState(0);
 
   useEffect(() => {
@@ -58,6 +58,8 @@ export default function Hero() {
             <a href="#contributors" className="secondary-btn">
               Become a Contributor
             </a>
+
+            <button type="button" className="secondary-btn" onClick={() => onNavigate("privacy")}>Privacy Policy</button>
           </div>
 
           <div className="platforms">

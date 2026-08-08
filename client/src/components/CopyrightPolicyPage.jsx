@@ -1,10 +1,11 @@
 import LegalPage from "./LegalPage";
 
-export default function CopyrightPolicyPage() {
+export default function CopyrightPolicyPage({ onNavigate }) {
   return (
     <LegalPage
       title="Copyright Policy"
       subtitle="Vocé respects the rights of composers, musicians, choirs, publishers, and other copyright owners."
+      onNavigate={onNavigate}
     >
       <h2>1. Ownership of Music</h2>
       <p>

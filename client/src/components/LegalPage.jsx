@@ -1,11 +1,18 @@
 import React from "react";
 import "../index.css";
 
-export default function LegalPage({ title, subtitle, children }) {
+export default function LegalPage({ title, subtitle, children, onNavigate }) {
   return (
     <section className="legal-page">
       <div className="container legal-page-shell">
-        <a href="#" className="legal-back-link">
+        <a
+          href="#"
+          className="legal-back-link"
+          onClick={(event) => {
+            event.preventDefault();
+            onNavigate?.("home");
+          }}
+        >
           ← Back to home
         </a>
 

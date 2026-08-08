@@ -26,11 +26,11 @@ function App() {
   const renderPage = () => {
     switch (activePage) {
       case "terms":
-        return <TermsOfServicePage />;
+        return <TermsOfServicePage onNavigate={navigateToPage} />;
       case "privacy":
-        return <PrivacyPolicyPage />;
+        return <PrivacyPolicyPage onNavigate={navigateToPage} />;
       case "copyright":
-        return <CopyrightPolicyPage />;
+        return <CopyrightPolicyPage onNavigate={navigateToPage} />;
       default:
         return (
           <>
@@ -50,6 +50,7 @@ function App() {
   return (
     <div className="app">
       <Navbar />
+      {activePage === "home" ? <Hero onNavigate={navigateToPage} /> : null}
       {renderPage()}
       <Footer onNavigate={navigateToPage} />
     </div>
