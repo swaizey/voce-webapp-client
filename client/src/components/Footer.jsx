@@ -80,7 +80,7 @@ export default function Footer({ onNavigate }) {
             </li>
             <li>
               <a
-                href="#privacy"
+                href="/privacy-policy"
                 onClick={(event) => {
                   event.preventDefault();
                   onNavigate("privacy");

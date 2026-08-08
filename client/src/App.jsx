@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -16,10 +16,29 @@ import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 import CopyrightPolicyPage from "./components/CopyrightPolicyPage";
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
+  const getPageFromPath = (path) => {
+    if (path === "/privacy-policy" || path.startsWith("/privacy-policy/")) {
+      return "privacy";
+    }
+
+    return "home";
+  };
+
+  const [activePage, setActivePage] = useState(() => getPageFromPath(window.location.pathname));
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setActivePage(getPageFromPath(window.location.pathname));
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const navigateToPage = (page) => {
+    const nextPath = page === "privacy" ? "/privacy-policy" : "/";
     setActivePage(page);
+    window.history.pushState({}, "", nextPath);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
